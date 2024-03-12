@@ -11,7 +11,7 @@
       "quantidadeRefri": 1,
       "quantidadeCerveja": 6,
       "quantidadeCarvao": 3,
-      "dataChurrasco": "1998-08-02"
+      "dataChurrasco": "12/03/2024"
     },
     {
       "id": "2",
@@ -24,7 +24,7 @@
       "quantidadeRefri": 1,
       "quantidadeCerveja": 6,
       "quantidadeCarvao": 3,
-      "dataChurrasco": "1998-08-02"
+      "dataChurrasco": "12/03/2024"
     },
     {
       "id": "3",
@@ -37,7 +37,7 @@
       "quantidadeRefri": 1,
       "quantidadeCerveja": 6,
       "quantidadeCarvao": 3,
-      "dataChurrasco": "1998-08-02"
+      "dataChurrasco": "12/03/2024"
     }
   ]
 }
