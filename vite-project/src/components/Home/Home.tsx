@@ -1,4 +1,4 @@
-
+import './home.css'
 import data from '../DbJson/db.json'
 
 const Home = () => {
@@ -10,31 +10,36 @@ const Home = () => {
                 <button className="bg-indigo-500 w-36 h-10 rounded-lg text-white text-lg font-semibold hover:bg-indigo-700" >Criar Churrasco</button>
             </header>
 
-            <main className='flex  w-full justify-center gap-5 items-center'>
-                <table>
-                    <tr className='flex gap-20'>
-                        <th>Data</th>
-                        <th>Quantidade de Pessoas</th>
-                        <th>Carne (Kg)</th>
-                        <th>Pão de Alho</th>
-                        <th>Carvão (Kg)</th>
-                        <th>Refri (L)</th>
-                        <th>Cerveja (L)</th>
-                        <th>Ação</th>
-                    </tr>
-                    <tbody>
+            <main className='flex  w-full justify-center items-center mt-6'>
+                <table className='w-10/12 gap-5 text-center flex-col justify-center items-center'>
+                    <thead className=''>
+                        <tr>
+                            <th>Data</th>
+                            <th>Quantidade de Pessoas</th>
+                            <th>Carne (Kg)</th>
+                            <th>Pão de Alho</th>
+                            <th>Carvão (Kg)</th>
+                            <th>Refri (L)</th>
+                            <th>Cerveja (L)</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody className=''>
                         {data.ListaChurrascos.map(item => (
-                            <td className='flex gap-2 border-2 border-black items-center rounded-lg justify-center'>
-                                {item.dataChurrasco}
-                                {item.quantidadePessoas}
-                                {item.quantidadeCarne}
-                                {item.quantidadePaoAlho}
-                                {item.quantidadeCarvao}
-                                {item.quantidadeRefri}
-                                {item.quantidadeCerveja}
-                                <button className="bg-indigo-500 w-12 h-8 rounded-lg text-white text-sm font-semibold hover:bg-indigo-700">Editar</button>
-                                <button className="bg-indigo-500 w-12 h-8 rounded-lg text-white text-sm font-semibold hover:bg-indigo-700">Excluir</button>
-                            </td>
+                            <tr className='border-2'>
+                                <td>{item.dataChurrasco}</td>
+                                <td>{item.quantidadePessoas}</td>
+                                <td>{item.quantidadeCarne}</td>
+                                <td>{item.quantidadePaoAlho}</td>
+                                <td>{item.quantidadeCarvao}</td>
+                                <td>{item.quantidadeRefri}</td>
+                                <td>{item.quantidadeCerveja}</td>
+                                <div className='flex gap-2 items-center justify-center'>
+                                    <button className="bg-indigo-500 w-12 h-8 rounded-lg text-white text-sm font-semibold hover:bg-indigo-700">Editar</button>
+                                    <button className="bg-indigo-500 w-12 h-8 rounded-lg text-white text-sm font-semibold hover:bg-indigo-700">Excluir</button>
+                                </div>
+                            </tr>
                         ))}
                     </tbody>
                 </table>
