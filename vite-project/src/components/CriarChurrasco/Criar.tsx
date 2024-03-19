@@ -2,9 +2,10 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { useForm } from "react-hook-form"
 import lista from '../../../../db.json'
 import * as yup from "yup"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import axios from "axios"
 import { useNavigate } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 
 
 
@@ -31,7 +32,6 @@ const Formulario = () => {
 
   const navigate = useNavigate();
 
-
   const [churrascos, setChurrascos] = useState(lista.ListaChurrascos);
 
   const { register, watch, handleSubmit, reset, formState: { errors } } = useForm<Inputs>({
@@ -48,6 +48,7 @@ const Formulario = () => {
     const homens = data.homens
     const mulheres = data.mulheres
     const criancas = data.criancas
+    
 
     const soma = homens + mulheres + criancas;
 
@@ -79,9 +80,10 @@ const Formulario = () => {
     /*Cerveja*/
 
     const cerveja = (homens + mulheres) * 3;
+    
 
     const dados = {
-      "id": 4,
+      "id": uuidv4(),
       "quantidadeHomens": data.homens,
       "quantidadeMulheres": data.mulheres,
       "quantidadeCriancas": data.criancas,
@@ -91,13 +93,12 @@ const Formulario = () => {
       "quantidadeRefri": garrafas,
       "quantidadeCerveja": cerveja,
       "quantidadeCarvao": carvao,
-      "dataChurrasco": 1
+      "dataChurrasco": "1",
     }
 
 
     setChurrascos(currentChurrascos => [...currentChurrascos, dados]);
 
-    // Envia apenas o novo churrasco para o servidor
     try {
       const response = await axios.post('http://localhost:3000/ListaChurrascos', dados);
       console.log('Churrasco adicionado:', response.data);

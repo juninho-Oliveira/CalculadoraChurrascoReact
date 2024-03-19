@@ -1,8 +1,16 @@
 import './home.css'
 import data from '../../../../db.json'
 import Header from '../Header/Header'
+import DeleteButton from '../ExcluirChurrasco/Excluir'
+import { useState } from 'react'
 
 const Home = () => {
+
+    const [listaChurrascos, setListaChurrascos] = useState(data.ListaChurrascos)
+
+    const handleItemDeleted = (id: any) => {
+        setListaChurrascos(listaChurrascos.filter(item => item.id !== id));
+    };
 
     return (
         <div>
@@ -36,7 +44,7 @@ const Home = () => {
                                 <td>{item.quantidadeCerveja}</td>
                                 <td className='flex gap-2 items-center justify-center p-2'>
                                     <button className="bg-indigo-500 w-12 h-8 rounded-lg text-white text-sm font-semibold hover:bg-indigo-700">Editar</button>
-                                    <button className="bg-indigo-500 w-12 h-8 rounded-lg text-white text-sm font-semibold hover:bg-indigo-700">Excluir</button>
+                                    <DeleteButton id={item.id} onDelete={handleItemDeleted} />
                                 </td>
                             </tr>
                         ))}
