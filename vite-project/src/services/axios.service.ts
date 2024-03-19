@@ -18,7 +18,4 @@ export const putApi = (url: string): Promise<AxiosResponse<ISwapi, any>> => {
     return api.put(url)
 }
 
-export const deleteApi = (url: string): Promise<AxiosResponse<ISwapi, any>> => {
-    return api.delete(url)
-}
 

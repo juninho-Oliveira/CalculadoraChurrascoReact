@@ -44,7 +44,13 @@ const Formulario = () => {
 
   const onSubmit = async (data: Inputs) => {
 
-    const dia = data.data
+    const dia = data.data;
+    const dataFormatada = new Date(dia).toLocaleDateString('pt-BR', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    });
+
     const homens = data.homens
     const mulheres = data.mulheres
     const criancas = data.criancas
@@ -93,7 +99,7 @@ const Formulario = () => {
       "quantidadeRefri": garrafas,
       "quantidadeCerveja": cerveja,
       "quantidadeCarvao": carvao,
-      "dataChurrasco": "1",
+      "dataChurrasco": dataFormatada,
     }
 
 
