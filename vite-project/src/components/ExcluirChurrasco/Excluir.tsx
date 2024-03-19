@@ -1,10 +1,8 @@
-// DeleteButton.jsx
-import React from 'react';
 import axios from 'axios';
 
 function DeleteButton({ id, onDelete }: any) {
   const handleDelete = () => {
-    // Substitua a URL pela URL do seu servidor
+
     axios.delete(`http://localhost:3000/ListaChurrascos/${id}`)
       .then(response => {
         onDelete(id);
