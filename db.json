@@ -1,0 +1,95 @@
+{
+  "ListaChurrascos": [
+    {
+      "id": "1",
+      "quantidadeHomens": 1,
+      "quantidadeMulheres": 1,
+      "quantidadeCriancas": 1,
+      "quantidadePessoas": 3,
+      "quantidadePaoAlho": 5,
+      "quantidadeCarne": 0.19,
+      "quantidadeRefri": 1,
+      "quantidadeCerveja": 6,
+      "quantidadeCarvao": 3,
+      "dataChurrasco": 1
+    },
+    {
+      "id": "2",
+      "quantidadeHomens": 1,
+      "quantidadeMulheres": 1,
+      "quantidadeCriancas": 1,
+      "quantidadePessoas": 3,
+      "quantidadePaoAlho": 5,
+      "quantidadeCarne": 0.19,
+      "quantidadeRefri": 1,
+      "quantidadeCerveja": 6,
+      "quantidadeCarvao": 3,
+      "dataChurrasco": 1
+    },
+    {
+      "id": 4,
+      "quantidadeHomens": 1,
+      "quantidadeMulheres": 1,
+      "quantidadeCriancas": 1,
+      "quantidadePessoas": 3,
+      "quantidadePaoAlho": 5,
+      "quantidadeCarne": 0.9199999999999999,
+      "quantidadeRefri": 1,
+      "quantidadeCerveja": 6,
+      "quantidadeCarvao": 3,
+      "dataChurrasco": 1
+    },
+    {
+      "id": 4,
+      "quantidadeHomens": 10,
+      "quantidadeMulheres": 10,
+      "quantidadeCriancas": 10,
+      "quantidadePessoas": 30,
+      "quantidadePaoAlho": 50,
+      "quantidadeCarne": 9.2,
+      "quantidadeRefri": 6,
+      "quantidadeCerveja": 60,
+      "quantidadeCarvao": 30,
+      "dataChurrasco": 1
+    },
+    {
+      "id": 4,
+      "quantidadeHomens": 5,
+      "quantidadeMulheres": 5,
+      "quantidadeCriancas": 5,
+      "quantidadePessoas": 15,
+      "quantidadePaoAlho": 25,
+      "quantidadeCarne": 4.6,
+      "quantidadeRefri": 3,
+      "quantidadeCerveja": 30,
+      "quantidadeCarvao": 15,
+      "dataChurrasco": 1
+    },
+    {
+      "id": 4,
+      "quantidadeHomens": 1,
+      "quantidadeMulheres": 1,
+      "quantidadeCriancas": 1,
+      "quantidadePessoas": 3,
+      "quantidadePaoAlho": 5,
+      "quantidadeCarne": 0.9199999999999999,
+      "quantidadeRefri": 1,
+      "quantidadeCerveja": 6,
+      "quantidadeCarvao": 3,
+      "dataChurrasco": 1
+    },
+    {
+      "id": 4,
+      "quantidadeHomens": 2,
+      "quantidadeMulheres": 2,
+      "quantidadeCriancas": 2,
+      "quantidadePessoas": 6,
+      "quantidadePaoAlho": 10,
+      "quantidadeCarne": 1.8399999999999999,
+      "quantidadeRefri": 2,
+      "quantidadeCerveja": 12,
+      "quantidadeCarvao": 6,
+      "dataChurrasco": 1
+    }
+  ]
+}

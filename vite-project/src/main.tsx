@@ -1,11 +1,9 @@
 
 import ReactDOM from 'react-dom/client'
-//import App from './App.tsx'
-import Formulario from './components/CriarChurrasco/Criar.tsx'
-import App from './App.tsx'
 import './index.css'
+import { AppRouter } from './components/routes/routes.tsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-    <App/>
+    <AppRouter/>
 )

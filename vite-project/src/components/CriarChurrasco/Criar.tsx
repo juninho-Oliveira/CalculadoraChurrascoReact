@@ -1,6 +1,11 @@
 import { yupResolver } from "@hookform/resolvers/yup"
 import { useForm } from "react-hook-form"
+import lista from '../../../../db.json'
 import * as yup from "yup"
+import { useEffect, useState } from "react"
+import axios from "axios"
+import { useNavigate } from 'react-router-dom';
+
 
 
 interface Inputs {
@@ -24,6 +29,11 @@ const schema = yup
 
 const Formulario = () => {
 
+  const navigate = useNavigate();
+
+
+  const [churrascos, setChurrascos] = useState(lista.ListaChurrascos);
+
   const { register, watch, handleSubmit, reset, formState: { errors } } = useForm<Inputs>({
     defaultValues: {
       //homens: 12
@@ -32,17 +42,82 @@ const Formulario = () => {
     resolver: yupResolver(schema)
   })
 
-  const onSubmit = (data: Inputs) => {
-    console.log(data)
+  const onSubmit = async (data: Inputs) => {
+
+    const dia = data.data
+    const homens = data.homens
+    const mulheres = data.mulheres
+    const criancas = data.criancas
+
+    const soma = homens + mulheres + criancas;
+
+    /*Calculo*/
+
+    const kgHomem = homens * 0.4;
+    const kgMulher = mulheres * 0.32;
+    const kgCrianca = criancas * 0.20;
+
+    const somaKgCarne = (kgHomem + kgMulher + kgCrianca);
+    const QuantidadeCarne = somaKgCarne
+
+
+    /*pao de alho*/
+
+    const paoAdulto = (homens + mulheres) * 2;
+    const paoCrianca = criancas * 1;
+
+    const somaPaoDeAlho = paoAdulto + paoCrianca;
+
+    /*Carvão*/
+
+    const carvao = (soma * 1)
+
+    /*Refrigerante*/
+
+    let garrafas = Math.ceil(soma / 5);
+
+    /*Cerveja*/
+
+    const cerveja = (homens + mulheres) * 3;
+
+    const dados = {
+      "id": 4,
+      "quantidadeHomens": data.homens,
+      "quantidadeMulheres": data.mulheres,
+      "quantidadeCriancas": data.criancas,
+      "quantidadePessoas": soma,
+      "quantidadePaoAlho": somaPaoDeAlho,
+      "quantidadeCarne": QuantidadeCarne,
+      "quantidadeRefri": garrafas,
+      "quantidadeCerveja": cerveja,
+      "quantidadeCarvao": carvao,
+      "dataChurrasco": 1
+    }
+
+
+    setChurrascos(currentChurrascos => [...currentChurrascos, dados]);
+
+    // Envia apenas o novo churrasco para o servidor
+    try {
+      const response = await axios.post('http://localhost:3000/ListaChurrascos', dados);
+      console.log('Churrasco adicionado:', response.data);
+      navigate('/');
+    } catch (error) {
+      console.error('Houve um erro ao adicionar o churrasco:', error);
+    }
+
+    // Reseta o formulário
     reset();
   }
+
+
 
   return (
     <>
       <section className="flex  items-center w-full flex-col ">
 
         <header className=" flex  w-full bg-slate-600 h-24 justify-center gap-5 items-center">
-          <button className="bg-indigo-500 w-20 h-10 rounded-lg text-white text-lg font-semibold hover:bg-indigo-700" >Home</button>
+          <button className="bg-indigo-500 w-20 h-10 rounded-lg text-white text-lg font-semibold hover:bg-indigo-700" onClick={()=> navigate('/')}>Home</button>
         </header>
 
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-96 h-96 justify-center border-2 border-gray-400 gap-2 p-3 mt-40 rounded-lg">

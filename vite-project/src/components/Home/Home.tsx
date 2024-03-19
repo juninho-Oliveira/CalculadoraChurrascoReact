@@ -1,5 +1,5 @@
 import './home.css'
-import data from '../DbJson/db.json'
+import data from '../../../../db.json'
 import Header from '../Header/Header'
 
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
 
             <main className='flex  w-full justify-center items-center mt-6 '>
                 <table className='w-10/12 gap-2 text-center flex-col justify-center items-center'>
-                    <thead className=''>
+                    <thead>
                         <tr>
                             <th>Data</th>
                             <th>Quantidade de Pessoas</th>
@@ -29,7 +29,7 @@ const Home = () => {
                             <tr key={item.id} className=' border-2 mb-5'>
                                 <td>{item.dataChurrasco}</td>
                                 <td>{item.quantidadePessoas}</td>
-                                <td>{item.quantidadeCarne}</td>
+                                <td>{item.quantidadeCarne.toFixed(2)}</td>
                                 <td>{item.quantidadePaoAlho}</td>
                                 <td>{item.quantidadeCarvao}</td>
                                 <td>{item.quantidadeRefri}</td>
