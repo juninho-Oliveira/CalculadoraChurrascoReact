@@ -1,30 +1,17 @@
 {
   "ListaChurrascos": [
     {
-      "id": "bcc94278-0ffd-462e-9aba-ebe1063268b2",
-      "quantidadeHomens": 30,
-      "quantidadeMulheres": 3,
-      "quantidadeCriancas": 30,
-      "quantidadePessoas": 63,
-      "quantidadePaoAlho": 96,
-      "quantidadeCarne": 18.96,
-      "quantidadeRefri": 13,
-      "quantidadeCerveja": 99,
-      "quantidadeCarvao": 63,
-      "dataChurrasco": "03/03/2026"
-    },
-    {
-      "dataChurrasco": "05/05/2025",
-      "quantidadeHomens": 21,
-      "quantidadeMulheres": 21,
-      "quantidadeCriancas": 21,
-      "quantidadePessoas": 63,
-      "quantidadeCarne": 19.32,
-      "quantidadePaoAlho": 105,
-      "quantidadeCarvao": 63,
-      "quantidadeRefri": 13,
-      "quantidadeCerveja": 126,
-      "id": "2c639356-39ec-4dcc-a04a-1e6b391b0b82"
+      "id": "9e1784ab-436f-4816-bf90-847304fa263e",
+      "quantidadeHomens": 10,
+      "quantidadeMulheres": 101,
+      "quantidadeCriancas": 10,
+      "quantidadePessoas": 121,
+      "quantidadePaoAlho": 232,
+      "quantidadeCarne": 38.32,
+      "quantidadeRefri": 25,
+      "quantidadeCerveja": 333,
+      "quantidadeCarvao": 121,
+      "dataChurrasco": "20/02/2029"
     }
   ]
 }

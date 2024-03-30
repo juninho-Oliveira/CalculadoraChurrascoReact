@@ -3,7 +3,7 @@ import axios from 'axios';
 function DeleteButton({ id, onDelete }: any) {
   const handleDelete = () => {
 
-    axios.delete(`http://localhost:3000/ListaChurrascos/${id}`)
+    axios.delete(`https://jsonserve-aulaada.onrender.com/ListaChurrascos/${id}`)
       .then(response => {
         onDelete(id);
         alert('Item deletado com sucesso!');

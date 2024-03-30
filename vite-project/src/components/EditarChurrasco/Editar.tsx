@@ -22,7 +22,7 @@ const Editar = () => {
 
   useEffect(() => {
     if (id) {
-      axios.get(`http://localhost:3000/ListaChurrascos/${id}`)
+      axios.get(`https://jsonserve-aulaada.onrender.com/ListaChurrascos/${id}`)
         .then(response => {
           const churrasco = response.data;
           
@@ -58,7 +58,7 @@ const Editar = () => {
 
     if (id) {
       try {
-        await axios.put(`http://localhost:3000/ListaChurrascos/${id}`, {
+        await axios.put(`https://jsonserve-aulaada.onrender.com/ListaChurrascos/${id}`, {
           dataChurrasco: dataFormatada,
           quantidadeHomens: data.homens,
           quantidadeMulheres: data.mulheres,

@@ -1,15 +1,30 @@
-import data from '../../../../db.json'
+//import data from '../../../../db.json'
 import Header from '../Header/Header'
 import DeleteButton from '../ExcluirChurrasco/Excluir'
 //import EditButton from '../EditarChurrasco/Editar'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 
 const Home = () => {
     const navigate = useNavigate();
 
-    const [listaChurrascos, setListaChurrascos] = useState(data.ListaChurrascos)
+    const [listaChurrascos, setListaChurrascos] = useState([])
+
+    async function resp() {
+        const resposta = await fetch('https://jsonserve-aulaada.onrender.com/ListaChurrascos')
+        const date =  await resposta.json()
+        //console.log(date.map((ele)=> ele), "ola")
+        setListaChurrascos(date)
+      }
+    
+    
+      useEffect(() => {
+        resp()
+        
+      },)
+
+    
 
 
     const handleItemDeleted = (id) => {
@@ -41,7 +56,7 @@ const Home = () => {
                     </thead>
 
                     <tbody>
-                        {data.ListaChurrascos.map(item => (
+                        {listaChurrascos.map(item => (
                             <tr key={item.id} className=' border-2 mb-5'>
                                 <td>{item.dataChurrasco}</td>
                                 <td>{item.quantidadePessoas}</td>

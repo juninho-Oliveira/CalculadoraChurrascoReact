@@ -2,7 +2,7 @@ import axios, {AxiosResponse} from "axios";
   
 
 const api = axios.create ({
-    baseURL: 'http://localhost:3000/ListaChurrascos'
+    baseURL: 'https://api.render.com/deploy/srv-cnu24gv79t8c73cc1h90?key=rUyr-wnHvQY'
 })
 
 
